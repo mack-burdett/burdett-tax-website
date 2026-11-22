@@ -58,7 +58,7 @@ h2{margin-top:.75rem;font-size:1.875rem}
 .portrait{position:relative;max-width:28rem;margin:0 auto;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06)}
 @media(min-width:1024px){.portrait{margin:0}}
 .portrait-photo{aspect-ratio:4/5;width:100%;background:#f1f5f9;display:block}
-.portrait-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.portrait-photo img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center 22%;object-position:center 22%;display:block}
 .portrait-caption{background:var(--navy);padding:1.25rem 1.5rem}
 .portrait-name{font-family:var(--serif);font-size:1.875rem;line-height:1.1;color:#fff;margin:0}
 .portrait-role{margin-top:.375rem;font-size:.65rem;text-transform:uppercase;letter-spacing:.22em;color:var(--brass-light)}
@@ -140,6 +140,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--brass)}
 .booked h3{font-size:1.375rem}
 .booked p{margin-top:.75rem;font-size:.9375rem;line-height:1.7;color:var(--s600)}
 .booked .btn{margin-top:1.5rem;display:inline-block}
+::-moz-placeholder{color:var(--s400)}
 ::placeholder{color:var(--s400)}
 select{cursor:pointer}
 .form-err{margin-top:1.5rem;max-width:36rem;font-size:.9375rem;line-height:1.7;color:#b01c1c;border-left:2px solid #b01c1c;padding-left:1rem}
@@ -178,7 +179,7 @@ footer{padding:2.5rem 0 3rem}
           <!-- Save your headshot as headshot.jpg beside this file. If it is missing the
                panel still renders; only the photo is absent. -->
           <div class="portrait-photo">
-            <img src="headshot.jpg" alt="Jamin Burdett, CPA"
+            <img src="/assets/headshot-DcujgUzI.jpg" alt="Jamin Burdett, CPA"
                  onerror="this.parentNode.classList.add('empty');this.remove()">
           </div>
           <div class="portrait-caption">
