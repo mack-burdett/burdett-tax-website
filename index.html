@@ -58,7 +58,7 @@ h2{margin-top:.75rem;font-size:1.875rem}
 .portrait{position:relative;max-width:28rem;margin:0 auto;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06)}
 @media(min-width:1024px){.portrait{margin:0}}
 .portrait-photo{aspect-ratio:4/5;width:100%;background:#f1f5f9;display:block}
-.portrait-photo img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center 22%;object-position:center 22%;display:block}
+.portrait-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
 .portrait-caption{background:var(--navy);padding:1.25rem 1.5rem}
 .portrait-name{font-family:var(--serif);font-size:1.875rem;line-height:1.1;color:#fff;margin:0}
 .portrait-role{margin-top:.375rem;font-size:.65rem;text-transform:uppercase;letter-spacing:.22em;color:var(--brass-light)}
@@ -101,8 +101,15 @@ h1{margin-top:1.5rem;font-size:2.1rem;letter-spacing:-.015em}
 /* pricing */
 .price-grid{margin-top:3rem;display:grid;gap:2.5rem}
 @media(min-width:1024px){.price-grid{grid-template-columns:5fr 7fr;gap:4rem;align-items:start}}
+.tiers{margin-top:3rem;display:grid;gap:1.5rem}
+@media(min-width:900px){.tiers{grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:stretch}}
+.tiers .price-card{display:flex;flex-direction:column;height:100%}
+.tiers .price-card.feature{border-color:var(--brass);box-shadow:0 1px 24px rgba(168,147,108,.12)}
+.tier-for{margin-top:1.25rem;font-size:.875rem;line-height:1.7;color:var(--s600)}
+.tier-tag{display:inline-block;margin-bottom:.75rem;font-size:.625rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--brass)}
 .price-card{border:1px solid var(--s200);padding:2rem}
 .price-amt{margin-top:1rem;font-family:var(--serif);font-size:3rem;font-weight:600;line-height:1}
+.tiers .price-amt{font-size:2.5rem}
 .price-card ul{margin-top:1.5rem;list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;line-height:1.7;color:var(--s600)}
 .price-card li{display:flex;gap:.75rem}
 .dash{margin-top:.7rem;height:1px;width:.75rem;flex-shrink:0;background:var(--brass)}
@@ -123,7 +130,16 @@ label{display:block;font-size:.65rem;font-weight:500;text-transform:uppercase;le
 input,select,textarea{display:block;width:100%;margin-top:.5rem;font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--navy);background:transparent;border:0;border-bottom:1px solid var(--s300);padding:.5rem 0;outline:none;transition:border-color .2s}
 textarea{border:1px solid var(--s200);background:#fff;padding:.75rem 1rem;line-height:1.7;resize:vertical}
 input:focus,select:focus,textarea:focus{border-color:var(--brass)}
-::-moz-placeholder{color:var(--s400)}
+.checks{border:0;padding:0;margin:0}
+.checks legend{font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--s500);padding:0}
+.check{display:flex;align-items:flex-start;gap:.75rem;margin-top:.875rem;text-transform:none;letter-spacing:0;font-size:.9375rem;font-weight:300;color:var(--navy);cursor:pointer}
+.check input{width:auto;margin:.2rem 0 0;flex-shrink:0;accent-color:var(--brass)}
+.check span{line-height:1.6}
+/* post-submit booking step */
+.booked{margin-top:3rem;border:1px solid var(--brass);padding:2rem;background:rgba(248,250,252,.9)}
+.booked h3{font-size:1.375rem}
+.booked p{margin-top:.75rem;font-size:.9375rem;line-height:1.7;color:var(--s600)}
+.booked .btn{margin-top:1.5rem;display:inline-block}
 ::placeholder{color:var(--s400)}
 select{cursor:pointer}
 .form-err{margin-top:1.5rem;max-width:36rem;font-size:.9375rem;line-height:1.7;color:#b01c1c;border-left:2px solid #b01c1c;padding-left:1rem}
@@ -162,7 +178,7 @@ footer{padding:2.5rem 0 3rem}
           <!-- Save your headshot as headshot.jpg beside this file. If it is missing the
                panel still renders; only the photo is absent. -->
           <div class="portrait-photo">
-            <img src="/assets/headshot-DcujgUzI.jpg" alt="Jamin Burdett, CPA"
+            <img src="headshot.jpg" alt="Jamin Burdett, CPA"
                  onerror="this.parentNode.classList.add('empty');this.remove()">
           </div>
           <div class="portrait-caption">
@@ -177,7 +193,7 @@ footer{padding:2.5rem 0 3rem}
         <p class="hero-lede">Federal tax preparation and planning for Americans living, working, and running businesses outside the United States — handled by one CPA, directly, wherever you happen to be.</p>
         <div class="cta-row">
           <a class="btn" href="#contact">Request a call</a>
-          <a class="btn-text" href="#pricing">See pricing</a>
+          <a class="btn-text" href="https://calendar.app.google/k3NHkAxanDAcUx5r7" target="_blank" rel="noopener">Or book a time directly</a>
         </div>
       </div>
     </div>
@@ -231,7 +247,7 @@ footer{padding:2.5rem 0 3rem}
         <h2>Three steps, and you know the price before the second one.</h2>
       </div>
       <ol class="steps">
-        <li class="reveal"><p class="num">01</p><h3>Short call</h3><p>Twenty minutes, no charge. You describe the situation, I tell you what is actually in scope and whether I am the right fit.</p></li>
+        <li class="reveal"><p class="num">01</p><h3>Short call</h3><p>Fifteen minutes, no charge. You describe the situation, I tell you what is actually in scope and whether I am the right fit. <a href="https://calendar.app.google/k3NHkAxanDAcUx5r7" target="_blank" rel="noopener">Book a slot</a>.</p></li>
         <li class="reveal"><p class="num">02</p><h3>Scope and fixed quote</h3><p>In writing before any work begins, with what is included and what is not. Revised only if your documents reveal something the call did not.</p></li>
         <li class="reveal"><p class="num">03</p><h3>Documents, then preparation</h3><p>A checklist built around your situation rather than a generic form. I prepare, then walk you through the return and the reasoning before anything is filed.</p></li>
       </ol>
@@ -245,11 +261,12 @@ footer{padding:2.5rem 0 3rem}
       <h2>Fixed fees, quoted in writing before work begins.</h2>
     </div>
 
-    <div class="price-grid">
+    <div class="tiers">
       <div class="reveal">
         <div class="price-card">
-          <p class="eyebrow">Base package</p>
+          <span class="tier-tag">Expat Core</span>
           <p class="price-amt">$750</p>
+          <p class="tier-for">Salaried abroad, straightforward year.</p>
           <ul>
             <li><span class="dash"></span>Federal individual return, Form 1040</li>
             <li><span class="dash"></span>Foreign earned income exclusion or foreign tax credit, whichever leaves you better off</li>
@@ -257,13 +274,46 @@ footer{padding:2.5rem 0 3rem}
             <li><span class="dash"></span>A written summary of the positions taken and why</li>
           </ul>
         </div>
-        <div class="note">
+      </div>
+
+      <div class="reveal">
+        <div class="price-card feature">
+          <span class="tier-tag">Expat Plus</span>
+          <p class="price-amt">$1,450</p>
+          <p class="tier-for">Self-employed, a rental, or the year you moved.</p>
+          <ul>
+            <li><span class="dash"></span>Everything in Expat Core</li>
+            <li><span class="dash"></span><em>One</em> of: self-employment (Schedule C, autónomo or equivalent), a rental property (Schedule E), or a mid-year move</li>
+            <li><span class="dash"></span>Dual-status or Form 2350 extension where the move year calls for it</li>
+            <li><span class="dash"></span>Totalization review, so you are not paying self-employment tax a treaty already excuses</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="price-card">
+          <span class="tier-tag">Streamlined Catch-Up</span>
+          <p class="price-amt">$3,250</p>
+          <p class="tier-for">Years behind, and want it closed properly.</p>
+          <ul>
+            <li><span class="dash"></span>Three delinquent tax years prepared</li>
+            <li><span class="dash"></span>Six years of FBARs</li>
+            <li><span class="dash"></span>Non-willfulness certification drafted, Form 14653</li>
+            <li><span class="dash"></span>Filed as a complete Streamlined Foreign Offshore package</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-grid" style="margin-top:3.5rem">
+      <div class="reveal">
+        <div class="note" style="margin-top:0">
           Most firms quote a lower base and then bill the FBAR separately, per account. Mine is included up to five.
         </div>
       </div>
 
       <div class="reveal">
-        <p>Most returns need something beyond the base. These are the common additions — confirmed in writing once your documents are in, so the number you are given is the number you pay.</p>
+        <p>Beyond the packages, these are the common additions — confirmed in writing once your documents are in, so the number you are given is the number you pay.</p>
         <ul class="rows">
           <li><span class="lbl">Additional foreign accounts</span><span class="amt">$50 each, beyond the first five</span></li>
           <li><span class="lbl">Foreign funds and PFICs</span><span class="amt">$500 per fund, per year</span></li>
@@ -271,7 +321,7 @@ footer{padding:2.5rem 0 3rem}
           <li><span class="lbl">FBAR for a year with no return in scope</span><span class="amt">$100</span></li>
           <li><span class="lbl">Foreign pensions and trusts</span><span class="amt">quoted — Forms 3520, 3520-A</span></li>
           <li><span class="lbl">Foreign business interests</span><span class="amt">quoted — Forms 5471, 8865, 8858</span></li>
-          <li><span class="lbl">Catching up on unfiled years</span><span class="amt">each year quoted as its own return</span></li>
+          <li><span class="lbl">Catch-up beyond three years</span><span class="amt">each additional year quoted as its own return</span></li>
         </ul>
 
         <div class="note">
@@ -306,25 +356,38 @@ footer{padding:2.5rem 0 3rem}
           <label>Country of residence
             <input required name="country" autocomplete="country-name" placeholder="Where you currently live">
           </label>
-          <label>Situation
-            <select required name="situation">
+          <label>Where you stand
+            <select required name="timeline">
               <option value="" disabled selected>Select one</option>
-              <option>Employed abroad</option>
-              <option>Freelance or remote</option>
-              <option>I own a business abroad</option>
-              <option>Green card holder leaving the US</option>
-              <option>Behind on filings</option>
-              <option>Something else</option>
+              <option>Current tax year only</option>
+              <option>Moved abroad this year — partial year, may need an extension</option>
+              <option>Behind on prior years — two or more unfiled returns</option>
+              <option>Giving up a green card or expatriating</option>
             </select>
           </label>
-          <label>Brief description
-            <textarea required name="description" rows="5" placeholder="Where you live, roughly what you earn and how, whether you have foreign accounts or investments, and how many years are outstanding if any."></textarea>
+
+          <fieldset class="checks">
+            <legend>Check everything that applies</legend>
+            <label class="check"><input type="checkbox" name="triggers" value="Foreign employer wages or US remote W-2"><span>Foreign employer wages, or a US remote W-2</span></label>
+            <label class="check"><input type="checkbox" name="triggers" value="Freelance, sole proprietor, or US LLC"><span>Freelance, sole proprietor, or a US LLC</span></label>
+            <label class="check"><input type="checkbox" name="triggers" value="Rental property (US or abroad)"><span>Rental property, US or abroad</span></label>
+            <label class="check"><input type="checkbox" name="triggers" value="Non-US funds or ETFs (PFIC)"><span>Non-US ETFs, mutual funds or investment funds</span></label>
+            <label class="check"><input type="checkbox" name="triggers" value="Foreign corporation, partnership, or trust"><span>A foreign corporation, partnership or trust</span></label>
+            <label class="check"><input type="checkbox" name="triggers" value="Over $10,000 across non-US accounts"><span>Over $10,000 total across non-US bank and investment accounts</span></label>
+          </fieldset>
+
+          <label>Anything else worth knowing
+            <textarea name="description" rows="3" placeholder="Optional. A sentence or two is plenty."></textarea>
           </label>
           <div>
             <button class="btn" type="submit">Send message</button>
           </div>
         </form>
-        <p class="thanks" id="thanks" hidden>Thank you — I will reply within one business day to arrange a short call.</p>
+        <div class="booked" id="booked" hidden>
+          <h3>Got your details.</h3>
+          <p>Grab a fifteen-minute intro slot below and we can confirm your flat quote on the call. If nothing suits, I will reply by email within one business day instead.</p>
+          <a class="btn" href="https://calendar.app.google/k3NHkAxanDAcUx5r7" target="_blank" rel="noopener">Book a 15-minute call</a>
+        </div>
         <p class="form-err" id="err" hidden>That didn't send, and I'd rather tell you than lose it. Please email me directly at <a href="mailto:jamin@burdett-tax.com">jamin@burdett-tax.com</a>.</p>
       </div>
     </div>
@@ -377,7 +440,7 @@ footer{padding:2.5rem 0 3rem}
     }).then(function(r){
       if (!r.ok) throw new Error(r.status);
       form.hidden = true;
-      document.getElementById('thanks').hidden = false;
+      document.getElementById('booked').hidden = false;
     }).catch(function(){
       btn.disabled = false;
       btn.textContent = 'Send message';
